@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CheckerBoardPosition/CheckerBoardPosition.csproj" />
+  <Project Path="CheckerBoardPositionTest/CheckerBoardPositionTest.csproj" Id="81162862-8633-422e-9e70-fd6aada3987a" />
+</Solution>
