@@ -84,5 +84,25 @@ public class MovementColumn
     {
         Assert.Throws<FormatException>(() => CheckerBoardPosition.Parse(post, null));
     }
-
+    [Theory]
+    [InlineData("A1")]
+    [InlineData("C6")]
+    [InlineData("B8")]
+    public void TryParse_ValidPosition_ReturnTrue(string post)
+    {
+        var result = CheckerBoardPosition.TryParse(post, null, out var position);
+        Assert.True(result);
+    }
+    [Theory]
+    [InlineData("A9")]
+    [InlineData("Z6")]
+    [InlineData("b8")]
+    [InlineData("29")]
+    [InlineData("GG")]
+    public void TryParse_NotValidPosition_ReturnFalseAndNull(string post)
+    {
+        var result = CheckerBoardPosition.TryParse(post, null, out var position);
+        Assert.False(result);
+        Assert.Null(position);
+    }
 }
